@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burger Simple</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main id="main">
+    <div id="wrapper">
+        <form id="form" class="was-validated">
+            <!--Size-->
+            <div class="form-check mt-3">
+                <input type="radio" class="form-check-input" id="burgerMini" name="burgerSize" required>
+                <label class="form-check-label" for="burgerMini">Burger-mini (Price: 50 UAH, Calories: 20)</label>
+            </div>
+            <div class="form-check mb-3">
+                <input type="radio" class="form-check-input" id="burgerGiant" name="burgerSize" required>
+                <label class="form-check-label" for="burgerGiant">Burger-Giant (Price: 100 UAH, Calories: 40)</label>
+                <div class="invalid-feedback">Please, choose the size of Burger!</div>
+            </div>
+            <!--Stuffing-->
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="cheese" name="stuffing" required>
+                <label class="form-check-label" for="cheese">Add Cheese (+10 UAH, +20 calories)</label>
+            </div>
+           <div class="form-check">
+                <input type="radio" class="form-check-input" id="salad" name="stuffing" required>
+                <label class="form-check-label" for="salad">Add Salad (+20 UAH, +5 calories)</label>
+            </div>
+            <div class="form-check mb-3">
+                <input type="radio" class="form-check-input" id="potato" name="stuffing" required>
+                <label class="form-check-label" for="potato">Add potato (+15 UAH, +10 calories)</label>
+                <div class="invalid-feedback">Please, add stuffing!</div>
+            </div>
+            <!--Topping-->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="spices">
+                <label class="form-check-label" for="spices">Add some spices (+15 UAH, 0 calories)</label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="mayo">
+                <label class="form-check-label" for="mayo">Add some mayo (+20 UAH, +5 calories)</label>
+            </div>
+
+            <button class="btn btn-primary" type="button" id="btn-show-order" data-bs-target="#exampleModal">CALCULATE AND SHOW ORDER</button>
+        </form>
+        <!--MODAL-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title text-center fs-5" id="exampleModalLabel">Here you can see price and calories: </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-close" class="btn btn-primary" data-bs-dismiss="modal">Click to BUY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/Burger.js"></script>
+<script src="js/domHelpers.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
